@@ -42,8 +42,8 @@ class WordCountMain{
     public static void main( String args[]) {
         WordCountMain wcm = new WordCountMain();
         wcm.map = new HashMap();
-        Thread t1 = new Thread (new WordCounter("/Developer/Study/Java Multithreading Example/file1.txt", wcm.map));
-        Thread t2 = new Thread (new WordCounter("/Developer/Study/Java Multithreading Example/file2.txt", wcm.map));
+        Thread t1 = new Thread (new WordCounter("file1.txt", wcm.map));
+        Thread t2 = new Thread (new WordCounter("file2.txt", wcm.map));
 
         Timer timer = new Timer();
         timer.schedule( new ScheduledReport(wcm.map), 0, 2000);
